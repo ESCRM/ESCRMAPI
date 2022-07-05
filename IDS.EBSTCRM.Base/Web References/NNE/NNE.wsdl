@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://com.stibo.net/nne/3.1/NNE" xmlns:ns2="http://com.stibo.net/nne/3.1/Types/NNE" name="NNE" targetNamespace="http://com.stibo.net/nne/3.1/NNE" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://com.stibo.net/nne/3.1/Types/NNE" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://com.stibo.net/nne/3.1/Types/NNE">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="Company">
+        <xsd:sequence>
+          <xsd:element name="PNo" type="xsd:int" />
+          <xsd:element name="adProtection" type="xsd:int" />
+          <xsd:element name="bankConnection" type="xsd:string" />
+          <xsd:element name="companyForm" type="xsd:string" />
+          <xsd:element name="companyId" type="xsd:int" />
+          <xsd:element name="companyType" type="xsd:string" />
+          <xsd:element name="cvrNo" type="xsd:int" />
+          <xsd:element name="district" type="xsd:string" />
+          <xsd:element name="dsSizeCode" type="xsd:string" />
+          <xsd:element name="dsSizeCodeBranch" type="xsd:string" />
+          <xsd:element name="email" type="xsd:string" />
+          <xsd:element name="fax" type="xsd:string" />
+          <xsd:element name="foundedYear" type="xsd:string" />
+          <xsd:element name="geography" type="tns:KVH" />
+          <xsd:element name="homePage" type="xsd:string" />
+          <xsd:element name="legalEntity" type="xsd:int" />
+          <xsd:element name="linkDebtor" type="xsd:string" />
+          <xsd:element name="linkGroupHierarchy" type="xsd:string" />
+          <xsd:element name="linkMap" type="xsd:string" />
+          <xsd:element name="linkNews" type="xsd:string" />
+          <xsd:element name="numberOfEmployees" type="xsd:int" />
+          <xsd:element name="numberOfEmployeesBranch" type="xsd:int" />
+          <xsd:element name="officialName" type="xsd:string" />
+          <xsd:element name="parentCompany" type="xsd:boolean" />
+          <xsd:element name="phone" type="xsd:string" />
+          <xsd:element name="statusText" type="xsd:string" />
+          <xsd:element name="statusValue" type="xsd:int" />
+          <xsd:element name="stockQuotation" type="xsd:string" />
+          <xsd:element name="street" type="xsd:string" />
+          <xsd:element name="subscriptionRules" type="xsd:string" />
+          <xsd:element name="tdcId" type="xsd:int" />
+          <xsd:element name="tdfName" type="xsd:string" />
+          <xsd:element name="updateDate" type="xsd:string" />
+          <xsd:element name="zipCode" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="KVH">
+        <xsd:sequence>
+          <xsd:element name="houseNo" type="xsd:string" />
+          <xsd:element name="municipalityCode" type="xsd:int" />
+          <xsd:element name="streetCode" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfAccountant">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:Accountant[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Accountant">
+        <xsd:sequence>
+          <xsd:element name="district" type="xsd:string" />
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="zipCode" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfstring">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:string[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfSubsidiary">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:Subsidiary[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Subsidiary">
+        <xsd:sequence>
+          <xsd:element name="country" type="xsd:string" />
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="share" type="xsd:string" />
+          <xsd:element name="tdcId" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBank">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:Bank[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Bank">
+        <xsd:sequence>
+          <xsd:element name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCategory">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:Category[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Category">
+        <xsd:sequence>
+          <xsd:element name="category" type="xsd:string" />
+          <xsd:element name="categoryCode" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfDecisionMaker">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:DecisionMaker[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="DecisionMaker">
+        <xsd:sequence>
+          <xsd:element name="firstName" type="xsd:string" />
+          <xsd:element name="group" type="xsd:string" />
+          <xsd:element name="id" type="xsd:int" />
+          <xsd:element name="lastName" type="xsd:string" />
+          <xsd:element name="title" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfFinance">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:Finance[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Finance">
+        <xsd:sequence>
+          <xsd:element name="accountingDate" type="xsd:string" />
+          <xsd:element name="assets" type="xsd:float" />
+          <xsd:element name="availableFunds" type="xsd:float" />
+          <xsd:element name="availableFundsRatio" type="xsd:float" />
+          <xsd:element name="balance" type="xsd:float" />
+          <xsd:element name="capacityRatio" type="xsd:float" />
+          <xsd:element name="contributionRatio" type="xsd:float" />
+          <xsd:element name="creditRating" type="xsd:string" />
+          <xsd:element name="currentAssets" type="xsd:float" />
+          <xsd:element name="depreciations" type="xsd:float" />
+          <xsd:element name="fixedAssets" type="xsd:float" />
+          <xsd:element name="fixedCost" type="xsd:float" />
+          <xsd:element name="grossProfit" type="xsd:float" />
+          <xsd:element name="incomeBeforeIncomeTax" type="xsd:float" />
+          <xsd:element name="linkPDF" type="xsd:string" />
+          <xsd:element name="longTermedLiability" type="xsd:float" />
+          <xsd:element name="lotsAndSites" type="xsd:float" />
+          <xsd:element name="netOutcome" type="xsd:float" />
+          <xsd:element name="numberOfEmployees" type="xsd:int" />
+          <xsd:element name="placings" type="xsd:float" />
+          <xsd:element name="profit" type="xsd:float" />
+          <xsd:element name="profitForTheYear" type="xsd:float" />
+          <xsd:element name="profitRatio" type="xsd:float" />
+          <xsd:element name="publishedDate" type="xsd:string" />
+          <xsd:element name="returnOnAssets" type="xsd:float" />
+          <xsd:element name="shareHoldersFundsOfInterest" type="xsd:float" />
+          <xsd:element name="shareholdersFunds" type="xsd:float" />
+          <xsd:element name="shortTermedLiability" type="xsd:float" />
+          <xsd:element name="solvencyRatio" type="xsd:float" />
+          <xsd:element name="stock" type="xsd:float" />
+          <xsd:element name="tradeDebitors" type="xsd:float" />
+          <xsd:element name="turnover" type="xsd:float" />
+          <xsd:element name="year" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfOwnership">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:Ownership[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Ownership">
+        <xsd:sequence>
+          <xsd:element name="country" type="xsd:string" />
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="share" type="xsd:string" />
+          <xsd:element name="tdcId" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfTrade">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:Trade[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Trade">
+        <xsd:sequence>
+          <xsd:element name="primary" type="xsd:boolean" />
+          <xsd:element name="trade" type="xsd:string" />
+          <xsd:element name="tradeCode" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfValueText">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:ValueText[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ValueText">
+        <xsd:sequence>
+          <xsd:element name="text" type="xsd:string" />
+          <xsd:element name="value" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfKeyText">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:KeyText[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="KeyText">
+        <xsd:sequence>
+          <xsd:element name="key" type="xsd:string" />
+          <xsd:element name="text" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfKeyInterval">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:KeyInterval[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="KeyInterval">
+        <xsd:sequence>
+          <xsd:element name="key" type="xsd:string" />
+          <xsd:element name="valueFrom" type="xsd:int" />
+          <xsd:element name="valueTo" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Question">
+        <xsd:sequence>
+          <xsd:element name="cvrNo" type="xsd:int" />
+          <xsd:element name="district" type="xsd:string" />
+          <xsd:element name="houseNo" type="xsd:string" />
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="nameStartsWith" type="xsd:boolean" />
+          <xsd:element name="phone" type="xsd:string" />
+          <xsd:element name="street" type="xsd:string" />
+          <xsd:element name="streetStartsWith" type="xsd:boolean" />
+          <xsd:element name="tdcId" type="xsd:int" />
+          <xsd:element name="zipCode" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="QuestionTargetGroup">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:Question">
+            <xsd:sequence>
+              <xsd:element name="PNo" type="xsd:int" />
+              <xsd:element name="accountantName" type="xsd:string" />
+              <xsd:element name="accountantZipCode" type="xsd:int" />
+              <xsd:element name="areaCodes" type="xsd:string" />
+              <xsd:element name="balanceFrom" type="xsd:int" />
+              <xsd:element name="balanceTo" type="xsd:int" />
+              <xsd:element name="bankConnection" type="xsd:string" />
+              <xsd:element name="category" type="xsd:string" />
+              <xsd:element name="categoryCode" type="xsd:int" />
+              <xsd:element name="categoryCodeList" type="xsd:string" />
+              <xsd:element name="companyFormCodeList" type="xsd:string" />
+              <xsd:element name="companyStatus" type="xsd:string" />
+              <xsd:element name="contributionRatioFrom" type="xsd:int" />
+              <xsd:element name="contributionRatioTo" type="xsd:int" />
+              <xsd:element name="countyCodes" type="xsd:string" />
+              <xsd:element name="decisionMaker" type="xsd:string" />
+              <xsd:element name="dsSizeCodeBranchFrom" type="xsd:string" />
+              <xsd:element name="dsSizeCodeBranchTo" type="xsd:string" />
+              <xsd:element name="email" type="xsd:string" />
+              <xsd:element name="foundedFrom" type="xsd:string" />
+              <xsd:element name="foundedTo" type="xsd:string" />
+              <xsd:element name="functionArea" type="xsd:int" />
+              <xsd:element name="grossProfitFrom" type="xsd:int" />
+              <xsd:element name="grossProfitTo" type="xsd:int" />
+              <xsd:element name="hasPhoneOnly" type="xsd:boolean" />
+              <xsd:element name="homePage" type="xsd:string" />
+              <xsd:element name="incomeBeforeIncomeTaxFrom" type="xsd:int" />
+              <xsd:element name="incomeBeforeIncomeTaxTo" type="xsd:int" />
+              <xsd:element name="legalEntitiesOnly" type="xsd:boolean" />
+              <xsd:element name="municipalityCodes" type="xsd:string" />
+              <xsd:element name="netResultFrom" type="xsd:int" />
+              <xsd:element name="netResultTo" type="xsd:int" />
+              <xsd:element name="noOfEmployeesFrom" type="xsd:int" />
+              <xsd:element name="noOfEmployeesTo" type="xsd:int" />
+              <xsd:element name="profitRatioFrom" type="xsd:int" />
+              <xsd:element name="profitRatioTo" type="xsd:int" />
+              <xsd:element name="registredCompaniesOnly" type="xsd:boolean" />
+              <xsd:element name="shareholdersFundFrom" type="xsd:int" />
+              <xsd:element name="shareholdersFundTo" type="xsd:int" />
+              <xsd:element name="trade" type="xsd:string" />
+              <xsd:element name="tradeCode" type="xsd:string" />
+              <xsd:element name="tradeCodeFrom" type="xsd:string" />
+              <xsd:element name="tradeCodeList" type="xsd:string" />
+              <xsd:element name="tradeCodeTo" type="xsd:string" />
+              <xsd:element name="tradeGroup" type="xsd:string" />
+              <xsd:element name="tradeGroupList" type="xsd:string" />
+              <xsd:element name="turnoverFrom" type="xsd:int" />
+              <xsd:element name="turnoverTo" type="xsd:int" />
+              <xsd:element name="updateDateFrom" type="xsd:string" />
+              <xsd:element name="updateDateTo" type="xsd:string" />
+              <xsd:element name="zipCodes" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Answer">
+        <xsd:sequence>
+          <xsd:element name="companyBasic" type="tns:ArrayOfCompanyBasic" />
+          <xsd:element name="errorMessage" type="xsd:string" />
+          <xsd:element name="window" type="tns:Window" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCompanyBasic">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap11-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:CompanyBasic[]" ref="soap11-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="CompanyBasic">
+        <xsd:sequence>
+          <xsd:element name="PNo" type="xsd:int" />
+          <xsd:element name="adProtection" type="xsd:int" />
+          <xsd:element name="companyId" type="xsd:int" />
+          <xsd:element name="companyType" type="xsd:string" />
+          <xsd:element name="cvrNo" type="xsd:int" />
+          <xsd:element name="district" type="xsd:string" />
+          <xsd:element name="fax" type="xsd:string" />
+          <xsd:element name="officialName" type="xsd:string" />
+          <xsd:element name="phone" type="xsd:string" />
+          <xsd:element name="street" type="xsd:string" />
+          <xsd:element name="tdcId" type="xsd:int" />
+          <xsd:element name="zipCode" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Window">
+        <xsd:sequence>
+          <xsd:element name="currentPage" type="xsd:int" />
+          <xsd:element name="from" type="xsd:int" />
+          <xsd:element name="to" type="xsd:int" />
+          <xsd:element name="total" type="xsd:int" />
+          <xsd:element name="totalPages" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="NNE_PortType_fetchCompany">
+    <part name="int_1" type="xsd:int" />
+    <part name="int_2" type="xsd:int" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyResponse">
+    <part name="result" type="ns2:Company" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyAccountants">
+    <part name="int_1" type="xsd:int" />
+    <part name="int_2" type="xsd:int" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyAccountantsResponse">
+    <part name="result" type="ns2:ArrayOfAccountant" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyAdditionalNames">
+    <part name="int_1" type="xsd:int" />
+    <part name="int_2" type="xsd:int" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyAdditionalNamesResponse">
+    <part name="result" type="ns2:ArrayOfstring" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyAssociates">
+    <part name="int_1" type="xsd:int" />
+    <part name="int_2" type="xsd:int" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyAssociatesResponse">
+    <part name="result" type="ns2:ArrayOfSubsidiary" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyBankConnections">
+    <part name="int_1" type="xsd:int" />
+    <part name="int_2" type="xsd:int" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyBankConnectionsResponse">
+    <part name="result" type="ns2:ArrayOfBank" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyCategories">
+    <part name="int_1" type="xsd:int" />
+    <part name="int_2" type="xsd:int" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyCategoriesResponse">
+    <part name="result" type="ns2:ArrayOfCategory" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyCreditRating">
+    <part name="int_1" type="xsd:int" />
+    <part name="int_2" type="xsd:int" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyCreditRatingResponse">
+    <part name="result" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyDecisionmakers">
+    <part name="int_1" type="xsd:int" />
+    <part name="int_2" type="xsd:int" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyDecisionmakersResponse">
+    <part name="result" type="ns2:ArrayOfDecisionMaker" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyFinance">
+    <part name="int_1" type="xsd:int" />
+    <part name="int_2" type="xsd:int" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyFinanceResponse">
+    <part name="result" type="ns2:ArrayOfFinance" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyOwnership">
+    <part name="int_1" type="xsd:int" />
+    <part name="int_2" type="xsd:int" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyOwnershipResponse">
+    <part name="result" type="ns2:ArrayOfOwnership" />
+  </message>
+  <message name="NNE_PortType_fetchCompanySubsidiaries">
+    <part name="int_1" type="xsd:int" />
+    <part name="int_2" type="xsd:int" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanySubsidiariesResponse">
+    <part name="result" type="ns2:ArrayOfSubsidiary" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyTrade">
+    <part name="int_1" type="xsd:int" />
+    <part name="int_2" type="xsd:int" />
+    <part name="String_3" type="xsd:string" />
+    <part name="String_4" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_fetchCompanyTradeResponse">
+    <part name="result" type="ns2:ArrayOfTrade" />
+  </message>
+  <message name="NNE_PortType_lookupAreaCodes" />
+  <message name="NNE_PortType_lookupAreaCodesResponse">
+    <part name="result" type="ns2:ArrayOfValueText" />
+  </message>
+  <message name="NNE_PortType_lookupCategoryCodes" />
+  <message name="NNE_PortType_lookupCategoryCodesResponse">
+    <part name="result" type="ns2:ArrayOfValueText" />
+  </message>
+  <message name="NNE_PortType_lookupCompanyForms" />
+  <message name="NNE_PortType_lookupCompanyFormsResponse">
+    <part name="result" type="ns2:ArrayOfKeyText" />
+  </message>
+  <message name="NNE_PortType_lookupCompanyStatus" />
+  <message name="NNE_PortType_lookupCompanyStatusResponse">
+    <part name="result" type="ns2:ArrayOfKeyText" />
+  </message>
+  <message name="NNE_PortType_lookupCountyCodes" />
+  <message name="NNE_PortType_lookupCountyCodesResponse">
+    <part name="result" type="ns2:ArrayOfValueText" />
+  </message>
+  <message name="NNE_PortType_lookupCreditRatings" />
+  <message name="NNE_PortType_lookupCreditRatingsResponse">
+    <part name="result" type="ns2:ArrayOfKeyText" />
+  </message>
+  <message name="NNE_PortType_lookupDsSizeCodes" />
+  <message name="NNE_PortType_lookupDsSizeCodesResponse">
+    <part name="result" type="ns2:ArrayOfKeyInterval" />
+  </message>
+  <message name="NNE_PortType_lookupFunctionAreas" />
+  <message name="NNE_PortType_lookupFunctionAreasResponse">
+    <part name="result" type="ns2:ArrayOfValueText" />
+  </message>
+  <message name="NNE_PortType_lookupMunicipalityCodes" />
+  <message name="NNE_PortType_lookupMunicipalityCodesResponse">
+    <part name="result" type="ns2:ArrayOfValueText" />
+  </message>
+  <message name="NNE_PortType_lookupTradeCodes" />
+  <message name="NNE_PortType_lookupTradeCodesResponse">
+    <part name="result" type="ns2:ArrayOfKeyText" />
+  </message>
+  <message name="NNE_PortType_lookupTradeGroups" />
+  <message name="NNE_PortType_lookupTradeGroupsResponse">
+    <part name="result" type="ns2:ArrayOfKeyText" />
+  </message>
+  <message name="NNE_PortType_search">
+    <part name="Question_1" type="ns2:Question" />
+    <part name="int_2" type="xsd:int" />
+    <part name="int_3" type="xsd:int" />
+    <part name="int_4" type="xsd:int" />
+    <part name="String_5" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_searchResponse">
+    <part name="result" type="ns2:Answer" />
+  </message>
+  <message name="NNE_PortType_searchTargetGroup">
+    <part name="QuestionTargetGroup_1" type="ns2:QuestionTargetGroup" />
+    <part name="int_2" type="xsd:int" />
+    <part name="int_3" type="xsd:int" />
+    <part name="int_4" type="xsd:int" />
+    <part name="String_5" type="xsd:string" />
+  </message>
+  <message name="NNE_PortType_searchTargetGroupResponse">
+    <part name="result" type="ns2:Answer" />
+  </message>
+  <portType name="NNE_PortType">
+    <operation name="fetchCompany" parameterOrder="int_1 int_2 String_3 String_4">
+      <input message="tns:NNE_PortType_fetchCompany" />
+      <output message="tns:NNE_PortType_fetchCompanyResponse" />
+    </operation>
+    <operation name="fetchCompanyAccountants" parameterOrder="int_1 int_2 String_3 String_4">
+      <input message="tns:NNE_PortType_fetchCompanyAccountants" />
+      <output message="tns:NNE_PortType_fetchCompanyAccountantsResponse" />
+    </operation>
+    <operation name="fetchCompanyAdditionalNames" parameterOrder="int_1 int_2 String_3 String_4">
+      <input message="tns:NNE_PortType_fetchCompanyAdditionalNames" />
+      <output message="tns:NNE_PortType_fetchCompanyAdditionalNamesResponse" />
+    </operation>
+    <operation name="fetchCompanyAssociates" parameterOrder="int_1 int_2 String_3 String_4">
+      <input message="tns:NNE_PortType_fetchCompanyAssociates" />
+      <output message="tns:NNE_PortType_fetchCompanyAssociatesResponse" />
+    </operation>
+    <operation name="fetchCompanyBankConnections" parameterOrder="int_1 int_2 String_3 String_4">
+      <input message="tns:NNE_PortType_fetchCompanyBankConnections" />
+      <output message="tns:NNE_PortType_fetchCompanyBankConnectionsResponse" />
+    </operation>
+    <operation name="fetchCompanyCategories" parameterOrder="int_1 int_2 String_3 String_4">
+      <input message="tns:NNE_PortType_fetchCompanyCategories" />
+      <output message="tns:NNE_PortType_fetchCompanyCategoriesResponse" />
+    </operation>
+    <operation name="fetchCompanyCreditRating" parameterOrder="int_1 int_2 String_3 String_4">
+      <input message="tns:NNE_PortType_fetchCompanyCreditRating" />
+      <output message="tns:NNE_PortType_fetchCompanyCreditRatingResponse" />
+    </operation>
+    <operation name="fetchCompanyDecisionmakers" parameterOrder="int_1 int_2 String_3 String_4">
+      <input message="tns:NNE_PortType_fetchCompanyDecisionmakers" />
+      <output message="tns:NNE_PortType_fetchCompanyDecisionmakersResponse" />
+    </operation>
+    <operation name="fetchCompanyFinance" parameterOrder="int_1 int_2 String_3 String_4">
+      <input message="tns:NNE_PortType_fetchCompanyFinance" />
+      <output message="tns:NNE_PortType_fetchCompanyFinanceResponse" />
+    </operation>
+    <operation name="fetchCompanyOwnership" parameterOrder="int_1 int_2 String_3 String_4">
+      <input message="tns:NNE_PortType_fetchCompanyOwnership" />
+      <output message="tns:NNE_PortType_fetchCompanyOwnershipResponse" />
+    </operation>
+    <operation name="fetchCompanySubsidiaries" parameterOrder="int_1 int_2 String_3 String_4">
+      <input message="tns:NNE_PortType_fetchCompanySubsidiaries" />
+      <output message="tns:NNE_PortType_fetchCompanySubsidiariesResponse" />
+    </operation>
+    <operation name="fetchCompanyTrade" parameterOrder="int_1 int_2 String_3 String_4">
+      <input message="tns:NNE_PortType_fetchCompanyTrade" />
+      <output message="tns:NNE_PortType_fetchCompanyTradeResponse" />
+    </operation>
+    <operation name="lookupAreaCodes">
+      <input message="tns:NNE_PortType_lookupAreaCodes" />
+      <output message="tns:NNE_PortType_lookupAreaCodesResponse" />
+    </operation>
+    <operation name="lookupCategoryCodes">
+      <input message="tns:NNE_PortType_lookupCategoryCodes" />
+      <output message="tns:NNE_PortType_lookupCategoryCodesResponse" />
+    </operation>
+    <operation name="lookupCompanyForms">
+      <input message="tns:NNE_PortType_lookupCompanyForms" />
+      <output message="tns:NNE_PortType_lookupCompanyFormsResponse" />
+    </operation>
+    <operation name="lookupCompanyStatus">
+      <input message="tns:NNE_PortType_lookupCompanyStatus" />
+      <output message="tns:NNE_PortType_lookupCompanyStatusResponse" />
+    </operation>
+    <operation name="lookupCountyCodes">
+      <input message="tns:NNE_PortType_lookupCountyCodes" />
+      <output message="tns:NNE_PortType_lookupCountyCodesResponse" />
+    </operation>
+    <operation name="lookupCreditRatings">
+      <input message="tns:NNE_PortType_lookupCreditRatings" />
+      <output message="tns:NNE_PortType_lookupCreditRatingsResponse" />
+    </operation>
+    <operation name="lookupDsSizeCodes">
+      <input message="tns:NNE_PortType_lookupDsSizeCodes" />
+      <output message="tns:NNE_PortType_lookupDsSizeCodesResponse" />
+    </operation>
+    <operation name="lookupFunctionAreas">
+      <input message="tns:NNE_PortType_lookupFunctionAreas" />
+      <output message="tns:NNE_PortType_lookupFunctionAreasResponse" />
+    </operation>
+    <operation name="lookupMunicipalityCodes">
+      <input message="tns:NNE_PortType_lookupMunicipalityCodes" />
+      <output message="tns:NNE_PortType_lookupMunicipalityCodesResponse" />
+    </operation>
+    <operation name="lookupTradeCodes">
+      <input message="tns:NNE_PortType_lookupTradeCodes" />
+      <output message="tns:NNE_PortType_lookupTradeCodesResponse" />
+    </operation>
+    <operation name="lookupTradeGroups">
+      <input message="tns:NNE_PortType_lookupTradeGroups" />
+      <output message="tns:NNE_PortType_lookupTradeGroupsResponse" />
+    </operation>
+    <operation name="search" parameterOrder="Question_1 int_2 int_3 int_4 String_5">
+      <input message="tns:NNE_PortType_search" />
+      <output message="tns:NNE_PortType_searchResponse" />
+    </operation>
+    <operation name="searchTargetGroup" parameterOrder="QuestionTargetGroup_1 int_2 int_3 int_4 String_5">
+      <input message="tns:NNE_PortType_searchTargetGroup" />
+      <output message="tns:NNE_PortType_searchTargetGroupResponse" />
+    </operation>
+  </portType>
+  <binding name="NNE_PortTypeBinding" type="tns:NNE_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="fetchCompany">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="fetchCompanyAccountants">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="fetchCompanyAdditionalNames">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="fetchCompanyAssociates">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="fetchCompanyBankConnections">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="fetchCompanyCategories">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="fetchCompanyCreditRating">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="fetchCompanyDecisionmakers">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="fetchCompanyFinance">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="fetchCompanyOwnership">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="fetchCompanySubsidiaries">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="fetchCompanyTrade">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="lookupAreaCodes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="lookupCategoryCodes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="lookupCompanyForms">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="lookupCompanyStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="lookupCountyCodes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="lookupCreditRatings">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="lookupDsSizeCodes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="lookupFunctionAreas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="lookupMunicipalityCodes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="lookupTradeCodes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="lookupTradeGroups">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="search">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="searchTargetGroup">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://com.stibo.net/nne/3.1/NNE" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="NNE">
+    <port name="NNE_PortTypePort" binding="tns:NNE_PortTypeBinding">
+      <soap:address location="http://service.nnerhverv.dk:80/nne-ws/3.1/NNE" />
+    </port>
+  </service>
+</definitions>

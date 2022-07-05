@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IDS.EBSTCRM.Base.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IDS_EBSTCRM_Base_NNO_NavneNumreBasis" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://tunnel.nno.dk/NNService/1.0/NavneNumreService.pl</Value>
+    </Setting>
+    <Setting Name="IDS_EBSTCRM_Base_NNE_NNE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://service.nnerhverv.dk:80/nne-ws/3.1/NNE</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

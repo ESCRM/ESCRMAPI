@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tunnel.nno.dk/NNService/1.0" xmlns:ns2="http://tunnel.nno.dk/NNService/1.0/Types" name="NavneNumreBasis" targetNamespace="http://tunnel.nno.dk/NNService/1.0" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://tunnel.nno.dk/NNService/1.0/Types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tunnel.nno.dk/NNService/1.0/Types">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="SearchQuestion">
+        <xsd:sequence>
+          <xsd:element name="phone" type="xsd:string" />
+          <xsd:element name="phonetype" type="xsd:string" />
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="startswith" type="xsd:string" />
+          <xsd:element name="phonetics" type="xsd:string" />
+          <xsd:element name="street" type="xsd:string" />
+          <xsd:element name="streetstartswith" type="xsd:string" />
+          <xsd:element name="housenumber" type="xsd:string" />
+          <xsd:element name="zip" type="xsd:string" />
+          <xsd:element name="district" type="xsd:string" />
+          <xsd:element name="municipalitycode" type="xsd:string" />
+          <xsd:element name="isbusiness" type="xsd:string" />
+          <xsd:element name="sortorder" type="xsd:string" />
+          <xsd:element name="username" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SearchIDQuestion">
+        <xsd:sequence>
+          <xsd:element name="TDC_PID" type="xsd:long" />
+          <xsd:element name="username" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SubscriberResult">
+        <xsd:sequence>
+          <xsd:element name="errorMessage" type="xsd:string" />
+          <xsd:element name="subscribersfound" type="xsd:int" />
+          <xsd:element name="subscribers" type="tns:ArrayOfSubscriber" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfSubscriber">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soap-enc:Array">
+            <xsd:attribute wsdl:arrayType="tns:Subscriber[]" ref="soap-enc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Subscriber">
+        <xsd:sequence>
+          <xsd:element name="TDC_PID" type="xsd:long" />
+          <xsd:element name="title" type="xsd:string" />
+          <xsd:element name="christianname" type="xsd:string" />
+          <xsd:element name="surname" type="xsd:string" />
+          <xsd:element name="companyname" type="xsd:string" />
+          <xsd:element name="zipcode" type="xsd:string" />
+          <xsd:element name="district" type="xsd:string" />
+          <xsd:element name="address" type="xsd:string" />
+          <xsd:element name="streetname" type="xsd:string" />
+          <xsd:element name="housenumberfrom" type="xsd:string" />
+          <xsd:element name="housenumberto" type="xsd:string" />
+          <xsd:element name="houseletterfrom" type="xsd:string" />
+          <xsd:element name="houseletterto" type="xsd:string" />
+          <xsd:element name="floor" type="xsd:string" />
+          <xsd:element name="direction" type="xsd:string" />
+          <xsd:element name="door" type="xsd:string" />
+          <xsd:element name="village" type="xsd:string" />
+          <xsd:element name="phone" type="xsd:string" />
+          <xsd:element name="phonetype" type="xsd:int" />
+          <xsd:element name="ismain" type="xsd:int" />
+          <xsd:element name="isfax" type="xsd:int" />
+          <xsd:element name="isbusiness" type="xsd:int" />
+          <xsd:element name="email" type="xsd:string" />
+          <xsd:element name="www" type="xsd:string" />
+          <xsd:element name="municipalitycode" type="xsd:string" />
+          <xsd:element name="streetcode" type="xsd:string" />
+          <xsd:element name="displayinfo" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="NavneNumreBasis_lookupSubscribers">
+    <part name="Question_1" type="ns2:SearchQuestion" />
+  </message>
+  <message name="NavneNumreBasis_lookupSubscribersResponse">
+    <part name="result" type="ns2:SubscriberResult" />
+  </message>
+  <message name="NavneNumreBasis_lookupSubscriberByID">
+    <part name="Question_1" type="ns2:SearchIDQuestion" />
+  </message>
+  <message name="NavneNumreBasis_lookupSubscriberByIDResponse">
+    <part name="result" type="ns2:SubscriberResult" />
+  </message>
+  <portType name="NavneNumreBasis">
+    <operation name="lookupSubscribers" parameterOrder="Question_1">
+      <input message="tns:NavneNumreBasis_lookupSubscribers" />
+      <output message="tns:NavneNumreBasis_lookupSubscribersResponse" />
+    </operation>
+    <operation name="lookupSubscribersByID" parameterOrder="Question_1">
+      <input message="tns:NavneNumreBasis_lookupSubscriberByID" />
+      <output message="tns:NavneNumreBasis_lookupSubscriberByIDResponse" />
+    </operation>
+  </portType>
+  <binding name="NavneNumreBasisBinding" type="tns:NavneNumreBasis">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="lookupSubscribers">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://tunnel.nno.dk/NNService/1.0" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://tunnel.nno.dk/NNService/1.0" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="lookupSubscribersByID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="encoded" namespace="http://tunnel.nno.dk/NNService/1.0" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://tunnel.nno.dk/NNService/1.0" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="NavneNumreBasis">
+    <port name="NavneNumreBasisPort" binding="tns:NavneNumreBasisBinding">
+      <soap:address location="http://tunnel.nno.dk/NNService/1.0/NavneNumreService.pl" />
+    </port>
+  </service>
+</definitions>

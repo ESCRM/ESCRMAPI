@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="W2L.aspx.cs" Inherits="IDS.EBSTCRM.WindowManager.Integration.W2L1" %>

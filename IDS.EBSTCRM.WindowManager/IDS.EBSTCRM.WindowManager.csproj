@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35D73EFB-15C6-47B4-8440-FBA25C42626F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IDS.EBSTCRM.WindowManager</RootNamespace>
+    <AssemblyName>IDS.EBSTCRM.WindowManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocX, Version=1.0.1.13, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Resources\DocX.dll</HintPath>
+    </Reference>
+    <Reference Include="Independentsoft.Exchange">
+      <HintPath>..\..\..\..\..\..\..\Resources\Independentsoft.Exchange.dll</HintPath>
+    </Reference>
+    <Reference Include="Independentsoft.Webdav.Exchange, Version=1.1.2868.16641, Culture=neutral, PublicKeyToken=76be97fe952f1ec7">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Resources\Independentsoft.Webdav.Exchange.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Release 0.0.2\IDS.EBSTCRM.WindowManager\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Integration\AVN.asmx" />
+    <Content Include="Integration\AVN560_API.asmx" />
+    <Content Include="Integration\demo.xml" />
+    <Content Include="Integration\Demos.asmx" />
+    <Content Include="Integration\ESCRMAPI.asmx" />
+    <Content Include="Integration\Outlook.asmx" />
+    <Content Include="Integration\Outlook2CRM.asmx" />
+    <Content Include="Integration\ReportGenerator.asmx" />
+    <Content Include="Integration\TilskudsinformationWS.asmx" />
+    <Content Include="Integration\W2L.asmx" />
+    <Content Include="Integration\W2L_old.asmx" />
+    <Content Include="Integration\W2L.aspx" />
+    <Content Include="Integration\W2L2014.asmx" />
+    <Content Include="js\1.8\ckeditor\adapters\jquery.js" />
+    <Content Include="js\1.8\ckeditor\build-config.js" />
+    <Content Include="js\1.8\ckeditor\ckeditor.js" />
+    <Content Include="js\1.8\ckeditor\config.js" />
+    <Content Include="js\1.8\ckeditor\contents.css" />
+    <Content Include="js\1.8\ckeditor\lang\af.js" />
+    <Content Include="js\1.8\ckeditor\lang\ar.js" />
+    <Content Include="js\1.8\ckeditor\lang\bg.js" />
+    <Content Include="js\1.8\ckeditor\lang\bn.js" />
+    <Content Include="js\1.8\ckeditor\lang\bs.js" />
+    <Content Include="js\1.8\ckeditor\lang\ca.js" />
+    <Content Include="js\1.8\ckeditor\lang\cs.js" />
+    <Content Include="js\1.8\ckeditor\lang\cy.js" />
+    <Content Include="js\1.8\ckeditor\lang\da.js" />
+    <Content Include="js\1.8\ckeditor\lang\de.js" />
+    <Content Include="js\1.8\ckeditor\lang\el.js" />
+    <Content Include="js\1.8\ckeditor\lang\en-au.js" />
+    <Content Include="js\1.8\ckeditor\lang\en-ca.js" />
+    <Content Include="js\1.8\ckeditor\lang\en-gb.js" />
+    <Content Include="js\1.8\ckeditor\lang\en.js" />
+    <Content Include="js\1.8\ckeditor\lang\eo.js" />
+    <Content Include="js\1.8\ckeditor\lang\es.js" />
+    <Content Include="js\1.8\ckeditor\lang\et.js" />
+    <Content Include="js\1.8\ckeditor\lang\eu.js" />
+    <Content Include="js\1.8\ckeditor\lang\fa.js" />
+    <Content Include="js\1.8\ckeditor\lang\fi.js" />
+    <Content Include="js\1.8\ckeditor\lang\fo.js" />
+    <Content Include="js\1.8\ckeditor\lang\fr-ca.js" />
+    <Content Include="js\1.8\ckeditor\lang\fr.js" />
+    <Content Include="js\1.8\ckeditor\lang\gl.js" />
+    <Content Include="js\1.8\ckeditor\lang\gu.js" />
+    <Content Include="js\1.8\ckeditor\lang\he.js" />
+    <Content Include="js\1.8\ckeditor\lang\hi.js" />
+    <Content Include="js\1.8\ckeditor\lang\hr.js" />
+    <Content Include="js\1.8\ckeditor\lang\hu.js" />
+    <Content Include="js\1.8\ckeditor\lang\id.js" />
+    <Content Include="js\1.8\ckeditor\lang\is.js" />
+    <Content Include="js\1.8\ckeditor\lang\it.js" />
+    <Content Include="js\1.8\ckeditor\lang\ja.js" />
+    <Content Include="js\1.8\ckeditor\lang\ka.js" />
+    <Content Include="js\1.8\ckeditor\lang\km.js" />
+    <Content Include="js\1.8\ckeditor\lang\ko.js" />
+    <Content Include="js\1.8\ckeditor\lang\ku.js" />
+    <Content Include="js\1.8\ckeditor\lang\lt.js" />
+    <Content Include="js\1.8\ckeditor\lang\lv.js" />
+    <Content Include="js\1.8\ckeditor\lang\mk.js" />
+    <Content Include="js\1.8\ckeditor\lang\mn.js" />
+    <Content Include="js\1.8\ckeditor\lang\ms.js" />
+    <Content Include="js\1.8\ckeditor\lang\nb.js" />
+    <Content Include="js\1.8\ckeditor\lang\nl.js" />
+    <Content Include="js\1.8\ckeditor\lang\no.js" />
+    <Content Include="js\1.8\ckeditor\lang\pl.js" />
+    <Content Include="js\1.8\ckeditor\lang\pt-br.js" />
+    <Content Include="js\1.8\ckeditor\lang\pt.js" />
+    <Content Include="js\1.8\ckeditor\lang\ro.js" />
+    <Content Include="js\1.8\ckeditor\lang\ru.js" />
+    <Content Include="js\1.8\ckeditor\lang\si.js" />
+    <Content Include="js\1.8\ckeditor\lang\sk.js" />
+    <Content Include="js\1.8\ckeditor\lang\sl.js" />
+    <Content Include="js\1.8\ckeditor\lang\sq.js" />
+    <Content Include="js\1.8\ckeditor\lang\sr-latn.js" />
+    <Content Include="js\1.8\ckeditor\lang\sr.js" />
+    <Content Include="js\1.8\ckeditor\lang\sv.js" />
+    <Content Include="js\1.8\ckeditor\lang\th.js" />
+    <Content Include="js\1.8\ckeditor\lang\tr.js" />
+    <Content Include="js\1.8\ckeditor\lang\ug.js" />
+    <Content Include="js\1.8\ckeditor\lang\uk.js" />
+    <Content Include="js\1.8\ckeditor\lang\vi.js" />
+    <Content Include="js\1.8\ckeditor\lang\zh-cn.js" />
+    <Content Include="js\1.8\ckeditor\lang\zh.js" />
+    <Content Include="js\1.8\ckeditor\samples\ajax.html" />
+    <Content Include="js\1.8\ckeditor\samples\api.html" />
+    <Content Include="js\1.8\ckeditor\samples\appendto.html" />
+    <Content Include="js\1.8\ckeditor\samples\assets\inlineall\logo.png" />
+    <Content Include="js\1.8\ckeditor\samples\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="js\1.8\ckeditor\samples\assets\posteddata.php" />
+    <Content Include="js\1.8\ckeditor\samples\assets\sample.css" />
+    <Content Include="js\1.8\ckeditor\samples\assets\sample.jpg" />
+    <Content Include="js\1.8\ckeditor\samples\assets\uilanguages\languages.js" />
+    <Content Include="js\1.8\ckeditor\samples\datafiltering.html" />
+    <Content Include="js\1.8\ckeditor\samples\divreplace.html" />
+    <Content Include="js\1.8\ckeditor\samples\index.html" />
+    <Content Include="js\1.8\ckeditor\samples\inlineall.html" />
+    <Content Include="js\1.8\ckeditor\samples\inlinebycode.html" />
+    <Content Include="js\1.8\ckeditor\samples\inlinetextarea.html" />
+    <Content Include="js\1.8\ckeditor\samples\jquery.html" />
+    <Content Include="js\1.8\ckeditor\samples\plugins\dialog\assets\my_dialog.js" />
+    <Content Include="js\1.8\ckeditor\samples\plugins\dialog\dialog.html" />
+    <Content Include="js\1.8\ckeditor\samples\plugins\enterkey\enterkey.html" />
+    <Content Include="js\1.8\ckeditor\samples\plugins\toolbar\toolbar.html" />
+    <Content Include="js\1.8\ckeditor\samples\plugins\wysiwygarea\fullpage.html" />
+    <Content Include="js\1.8\ckeditor\samples\readonly.html" />
+    <Content Include="js\1.8\ckeditor\samples\replacebyclass.html" />
+    <Content Include="js\1.8\ckeditor\samples\replacebycode.html" />
+    <Content Include="js\1.8\ckeditor\samples\sample.css" />
+    <Content Include="js\1.8\ckeditor\samples\sample.js" />
+    <Content Include="js\1.8\ckeditor\samples\sample_posteddata.php" />
+    <Content Include="js\1.8\ckeditor\samples\tabindex.html" />
+    <Content Include="js\1.8\ckeditor\samples\uicolor.html" />
+    <Content Include="js\1.8\ckeditor\samples\uilanguages.html" />
+    <Content Include="js\1.8\ckeditor\samples\xhtmlstyle.html" />
+    <Content Include="js\1.8\ckeditor\skins\moono\dialog.css" />
+    <Content Include="js\1.8\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="js\1.8\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="js\1.8\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="js\1.8\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="js\1.8\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="js\1.8\ckeditor\skins\moono\editor.css" />
+    <Content Include="js\1.8\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="js\1.8\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="js\1.8\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="js\1.8\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="js\1.8\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="js\1.8\ckeditor\skins\moono\icons.png" />
+    <Content Include="js\1.8\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="js\1.8\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="js\1.8\ckeditor\skins\moono\images\close.png" />
+    <Content Include="js\1.8\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="js\1.8\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="js\1.8\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="js\1.8\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="js\1.8\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="js\1.8\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="js\1.8\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="js\1.8\ckeditor\styles.js" />
+    <Content Include="js\1.8\codemirror\codemirror.css" />
+    <Content Include="js\1.8\codemirror\codemirror.js" />
+    <Content Include="js\1.8\codemirror\javascript.js" />
+    <Content Include="js\1.8\codemirror\util\closetag.js" />
+    <Content Include="js\1.8\codemirror\util\colorize.js" />
+    <Content Include="js\1.8\codemirror\util\continuecomment.js" />
+    <Content Include="js\1.8\codemirror\util\continuelist.js" />
+    <Content Include="js\1.8\codemirror\util\dialog.css" />
+    <Content Include="js\1.8\codemirror\util\dialog.js" />
+    <Content Include="js\1.8\codemirror\util\foldcode.js" />
+    <Content Include="js\1.8\codemirror\util\formatting.js" />
+    <Content Include="js\1.8\codemirror\util\javascript-hint.js" />
+    <Content Include="js\1.8\codemirror\util\loadmode.js" />
+    <Content Include="js\1.8\codemirror\util\match-highlighter.js" />
+    <Content Include="js\1.8\codemirror\util\matchbrackets.js" />
+    <Content Include="js\1.8\codemirror\util\multiplex.js" />
+    <Content Include="js\1.8\codemirror\util\overlay.js" />
+    <Content Include="js\1.8\codemirror\util\pig-hint.js" />
+    <Content Include="js\1.8\codemirror\util\runmode-standalone.js" />
+    <Content Include="js\1.8\codemirror\util\runmode.js" />
+    <Content Include="js\1.8\codemirror\util\search.js" />
+    <Content Include="js\1.8\codemirror\util\searchcursor.js" />
+    <Content Include="js\1.8\codemirror\util\simple-hint.css" />
+    <Content Include="js\1.8\codemirror\util\simple-hint.js" />
+    <Content Include="js\1.8\codemirror\util\xml-hint.js" />
+    <Content Include="js\1.8\colorpicker\colorpicker\ColorMethods.js" />
+    <Content Include="js\1.8\colorpicker\colorpicker\ColorPicker.js" />
+    <Content Include="js\1.8\colorpicker\colorpicker\ColorValuePicker.js" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-blue-bl.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-blue-br.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-blue-tl.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-blue-tr.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-brightness.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-green-bl.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-green-br.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-green-tl.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-green-tr.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-hue.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-red-bl.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-red-br.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-red-tl.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-red-tr.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\bar-saturation.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\blank.gif" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\map-blue-max.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\map-blue-min.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\map-brightness.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\map-green-max.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\map-green-min.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\map-hue.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\map-red-max.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\map-red-min.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\map-saturation-overlay.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\map-saturation.png" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\mappoint.gif" />
+    <Content Include="js\1.8\colorpicker\colorpicker\images\rangearrows.gif" />
+    <Content Include="js\1.8\colorpicker\colorpicker\Slider.js" />
+    <Content Include="js\1.8\colorpicker\prototype.js" />
+    <Content Include="js\1.8\CRMAPI.js" />
+    <Content Include="js\1.8\CRM_FieldPropertyManager.js" />
+    <Content Include="js\1.8\CRM_Login.js" />
+    <Content Include="js\1.8\CRM_SMVContactItem.js" />
+    <Content Include="js\1.8\CRM_Startmenu.js" />
+    <Content Include="js\1.8\CRM_TimeUsageOverviewItem.js" />
+    <Content Include="js\1.8\DataLinkSearch.js" />
+    <Content Include="js\1.8\DatePicker.js" />
+    <Content Include="js\1.8\hourUsageEdit.js" />
+    <Content Include="js\1.8\HourUsageView.js" />
+    <Content Include="js\1.8\IDC_AnimatedZoomToolbar.js" />
+    <Content Include="js\1.8\IDC_CalendarView.js" />
+    <Content Include="js\1.8\IDC_ContextMenu.js" />
+    <Content Include="js\1.8\IDC_Core.js" />
+    <Content Include="js\1.8\IDC_DateTimePicker.js" />
+    <Content Include="js\1.8\IDC_Graph.js" />
+    <Content Include="js\1.8\IDC_Gridview.js" />
+    <Content Include="js\1.8\IDC_Listview.js" />
+    <Content Include="js\1.8\IDC_Listview_old.js" />
+    <Content Include="js\1.8\IDC_Password.js" />
+    <Content Include="js\1.8\IDC_Progressbar.js" />
+    <Content Include="js\1.8\IDC_Splitter.js" />
+    <Content Include="js\1.8\IDC_SqlAutoComplete.js" />
+    <Content Include="js\1.8\IDC_Statusbar.js" />
+    <Content Include="js\1.8\IDC_TabPages.js" />
+    <Content Include="js\1.8\IDC_TinyBubble.js" />
+    <Content Include="js\1.8\IDC_Toolbar.js" />
+    <Content Include="js\1.8\IDC_Treeview.js" />
+    <Content Include="js\1.8\IDC_Treeview_old.js" />
+    <Content Include="js\1.8\IDC_WindowManager.js" />
+    <Content Include="js\1.8\IDC_WindowManager_old.js" />
+    <Content Include="js\1.8\jquery.form.js" />
+    <Content Include="js\1.8\js.js" />
+    <Content Include="js\1.8\ReportGenerator.js" />
+    <Content Include="js\1.8\RequiredFields.js" />
+    <Content Include="js\1.8\smvEdit.js" />
+    <Content Include="js\1.8\Widget.js" />
+    <Content Include="js\jquery-3.4.1.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="js\1.8\ckeditor\CHANGES.md" />
+    <Content Include="js\1.8\ckeditor\LICENSE.md" />
+    <Content Include="js\1.8\ckeditor\README.md" />
+    <Content Include="js\1.8\ckeditor\skins\moono\readme.md" />
+    <None Include="Properties\PublishProfiles\Local FS.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classes\AVNStatisticsCollection.cs" />
+    <Compile Include="classes\CRMAPI.cs" />
+    <Compile Include="classes\Dummy.cs" />
+    <Compile Include="classes\DynamicFieldsManager.cs" />
+    <Compile Include="classes\multipleRowsManager.cs" />
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Integration\AVN.asmx.cs">
+      <DependentUpon>AVN.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Integration\AVN560_API.asmx.cs">
+      <DependentUpon>AVN560_API.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Integration\AVNObj\AVNEntity.cs" />
+    <Compile Include="Integration\AVNObj\AVNType.cs" />
+    <Compile Include="Integration\AVNObj\Businesscase.cs" />
+    <Compile Include="Integration\AVNObj\Company.cs" />
+    <Compile Include="Integration\AVNObj\CompanyQuery.cs" />
+    <Compile Include="Integration\AVNObj\Contact.cs" />
+    <Compile Include="Integration\AVNObj\ContactQuery.cs" />
+    <Compile Include="Integration\AVNObj\AVNField.cs" />
+    <Compile Include="Integration\ESCRMAPI.asmx.cs">
+      <DependentUpon>ESCRMAPI.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Integration\Models\ContactAgreement.cs" />
+    <Compile Include="Integration\Models\ContactsByEmail.cs" />
+    <Compile Include="Integration\Models\DownloadFile.cs" />
+    <Compile Include="Integration\Models\MailgroupContact.cs" />
+    <Compile Include="Integration\Models\SearchCompany.cs" />
+    <Compile Include="Integration\Models\SearchCompanyResponse.cs" />
+    <Compile Include="Integration\Services\AgreementService.cs" />
+    <Compile Include="Integration\Services\CompanyService.cs" />
+    <Compile Include="Integration\Services\ContactService.cs" />
+    <Compile Include="Integration\Services\CredentialService.cs" />
+    <Compile Include="Integration\Models\Company.cs" />
+    <Compile Include="Integration\Models\Contact.cs" />
+    <Compile Include="Integration\Models\Credential.cs" />
+    <Compile Include="Integration\Models\DynamicFields.cs" />
+    <Compile Include="Integration\Models\Field.cs" />
+    <Compile Include="Integration\Models\Response.cs" />
+    <Compile Include="Integration\Models\UploadContactDocument.cs" />
+    <Compile Include="Integration\Services\DynamicFieldService.cs" />
+    <Compile Include="Integration\Services\MailgroupService.cs" />
+    <Compile Include="Integration\Services\TextMethods.cs" />
+    <Compile Include="Integration\Sharing\Organisation.cs" />
+    <Compile Include="Integration\Sharing\Usergroup.cs" />
+    <Compile Include="Integration\DataSet.cs" />
+    <Compile Include="Integration\Demos.asmx.cs">
+      <DependentUpon>Demos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Integration\Outlook.asmx.cs">
+      <DependentUpon>Outlook.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Integration\Outlook2CRM.asmx.cs">
+      <DependentUpon>Outlook2CRM.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Integration\OutlookUserInfo.cs" />
+    <Compile Include="Integration\Outlook_Organisation.cs" />
+    <Compile Include="Integration\Outlook_SMVPOTContact.cs" />
+    <Compile Include="Integration\ReportGenerator.asmx.cs">
+      <DependentUpon>ReportGenerator.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Integration\TilskudsinformationWS.asmx.cs">
+      <DependentUpon>TilskudsinformationWS.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Integration\VaekstPlan.cs" />
+    <Compile Include="Integration\VaekstPlanEU.cs" />
+    <Compile Include="Integration\VaekstPlanVaekstUnivers.cs" />
+    <Compile Include="Integration\W2L.asmx.cs">
+      <DependentUpon>W2L.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Integration\W2L_old.asmx.cs">
+      <DependentUpon>W2L_old.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Integration\W2L.aspx.cs">
+      <DependentUpon>W2L.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Integration\W2L.aspx.designer.cs">
+      <DependentUpon>W2L.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Integration\W2L2014.asmx.cs">
+      <DependentUpon>W2L2014.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\UserAccess.cs" />
+    <Compile Include="Security\SessionManager.cs" />
+    <Compile Include="Service\AgreementService.cs" />
+    <Compile Include="Service\IPAddressRange.cs" />
+    <Compile Include="Service\ipStackService.cs" />
+    <Compile Include="Service\TimeService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IDS.EBSTCRM.Base\IDS.EBSTCRM.Base.csproj">
+      <Project>{4B944A7A-0E99-452C-A71A-1596DEC49C45}</Project>
+      <Name>IDS.EBSTCRM.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IDS.EBSTCRM.DBManager\IDS.EBSTCRM.DBManager.csproj">
+      <Project>{EDEF3291-0755-4048-A28B-2094AE89BA85}</Project>
+      <Name>IDS.EBSTCRM.DBManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3174</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3177/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
